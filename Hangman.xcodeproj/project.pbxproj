@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94E76742A6FD11200D58AA2 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E76732A6FD11200D58AA2 /* WordManager.swift */; };
 		C95458E22A6FA95800F9976A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95458E12A6FA95800F9976A /* AppDelegate.swift */; };
 		C95458E42A6FA95800F9976A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95458E32A6FA95800F9976A /* SceneDelegate.swift */; };
 		C95458E62A6FA95800F9976A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95458E52A6FA95800F9976A /* MainViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C94E76732A6FD11200D58AA2 /* WordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 		C95458DE2A6FA95800F9976A /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95458E12A6FA95800F9976A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95458E32A6FA95800F9976A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		C95458F72A6FB23900F9976A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C94E76732A6FD11200D58AA2 /* WordManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				C95458E62A6FA95800F9976A /* MainViewController.swift in Sources */,
 				C95458E22A6FA95800F9976A /* AppDelegate.swift in Sources */,
 				C95458E42A6FA95800F9976A /* SceneDelegate.swift in Sources */,
+				C94E76742A6FD11200D58AA2 /* WordManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
