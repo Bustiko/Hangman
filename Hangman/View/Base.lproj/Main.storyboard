@@ -423,20 +423,6 @@
                                 <color key="textColor" red="0.70196078429999997" green="0.25490196079999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARd-md-taE">
-                                <rect key="frame" x="15.999999999999993" y="59" width="103.33333333333331" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="gJ5-Ri-yXC"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="New Word">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.70196078429999997" green="0.25490196079999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="newWordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bhz-bn-s3q"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -457,13 +443,10 @@
                             <constraint firstItem="Nja-co-naJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KdA-An-VXF"/>
                             <constraint firstItem="WOe-EC-B12" firstAttribute="top" secondItem="Nja-co-naJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Lnl-Zg-dmw"/>
                             <constraint firstItem="Nja-co-naJ" firstAttribute="top" secondItem="PaU-gc-kfP" secondAttribute="bottom" constant="8" symbolic="YES" id="M2L-i9-Rgj"/>
-                            <constraint firstItem="b2R-ls-XoL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ARd-md-taE" secondAttribute="trailing" constant="8" symbolic="YES" id="MAQ-zN-Hyh"/>
                             <constraint firstItem="b2R-ls-XoL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MJ3-Sw-UV8"/>
-                            <constraint firstItem="ARd-md-taE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MMt-bQ-PdK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nja-co-naJ" secondAttribute="trailing" constant="16" id="Obh-CT-Azl"/>
                             <constraint firstItem="KTm-sk-eLH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PlU-tL-qnm"/>
                             <constraint firstItem="A4t-DL-9hP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="327" id="bcq-H2-PEe"/>
-                            <constraint firstItem="ARd-md-taE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="be1-xJ-ihP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KTm-sk-eLH" secondAttribute="trailing" constant="16" id="gdj-ji-xJZ"/>
                             <constraint firstItem="ATr-eG-WAX" firstAttribute="top" secondItem="WOe-EC-B12" secondAttribute="bottom" constant="8" symbolic="YES" id="iy3-lM-kXt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WOe-EC-B12" secondAttribute="trailing" constant="16" id="jIL-Gb-G5V"/>

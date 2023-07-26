@@ -53,6 +53,16 @@ class MainViewController: UIViewController {
     
     @IBAction func letterButtonPressed(_ sender: UIButton) {
         
+        
+        if indices.count == words[0].count - 1 {
+            performSegue(withIdentifier: "mainToWin", sender: self)
+            DispatchQueue.main.async {
+                self.heartsLeft.text = "5"
+                self.hintsLeft.text = "3"
+            }
+            wordManager.fetchData()
+        }
+        
         if let wordText = wordLabel.text {
             updatedWord = Array(wordText)
         }
@@ -60,7 +70,9 @@ class MainViewController: UIViewController {
         for x in 0..<words[0].count {
             if String(words[0][x]) == (sender.titleLabel?.text)! {
                 updatedWord[x] = words[0][x]
-                indices.append(x)
+                if !indices.contains(x) {
+                    indices.append(x)
+                }
             }
         }
         
@@ -73,16 +85,21 @@ class MainViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.wordLabel.text = "All hearts used."
                 }
+                Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { timer in
+                        self.performSegue(withIdentifier: "mainToLose", sender: self)
+                }
+                
+                DispatchQueue.main.async {
+                    self.heartsLeft.text = "5"
+                    self.hintsLeft.text = "3"
+                    
+                }
+                wordManager.fetchData()
             }
         }
         
         wordLabel.text = String(updatedWord)
         
-    }
-    
-    
-    @IBAction func newWordButtonPressed(_ sender: UIButton) {
-        wordManager.fetchData()
     }
     
 }
