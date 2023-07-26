@@ -13,10 +13,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var heartsLeft: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var hintsLeft: UILabel!
-
+    
     
     var wordManager = WordManager()
     var updatedWord = Array<Character>()
+    var countForNextQuestion = 0
+    var indices: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class MainViewController: UIViewController {
         wordManager.delegate = self
         wordManager.fetchData()
     }
-
+    
     @IBAction func hintButtonPressed(_ sender: UIButton) {
     }
     
@@ -37,12 +39,19 @@ class MainViewController: UIViewController {
         
         for x in 0..<words[0].count {
             if String(words[0][x]) == (sender.titleLabel?.text)! {
+                countForNextQuestion += 1
                 updatedWord[x] = words[0][x]
+                indices.append(x)
             }
+               
         }
         
         wordLabel.text = String(updatedWord)
-        
+        if countForNextQuestion == words[0].count {
+            countForNextQuestion = 0
+            wordLabel.text = ""
+            wordManager.fetchData()
+        }
     }
     
 }
@@ -77,5 +86,10 @@ extension StringProtocol {
     subscript(range: PartialRangeFrom<Int>) -> SubSequence { self[index(startIndex, offsetBy: range.lowerBound)...] }
     subscript(range: PartialRangeThrough<Int>) -> SubSequence { self[...index(startIndex, offsetBy: range.upperBound)] }
     subscript(range: PartialRangeUpTo<Int>) -> SubSequence { self[..<index(startIndex, offsetBy: range.upperBound)] }
+}
+extension String {
+    func numberOfOccurrencesOf(string: String) -> Int {
+        return self.components(separatedBy:string).count - 1
+    }
 }
 
