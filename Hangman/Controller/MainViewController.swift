@@ -32,6 +32,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func hintButtonPressed(_ sender: UIButton) {
+        if numberOfHints == 1 {
+            DispatchQueue.main.async {
+                sender.titleLabel?.text = "No hints left."
+            }
+            sender.isEnabled = false
+        }
         numberOfHints -= 1
         hintsLeft.text = String(numberOfHints)
         for x in 0..<indices.count {
