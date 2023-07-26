@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
             DispatchQueue.main.async {
                 self.heartsLeft.text = String(heartsAsInt - 1)
             }
-            if heartsLeft.text == "0" {
+            if heartsLeft.text == "1" {
                 DispatchQueue.main.async {
                     self.wordLabel.text = "All hearts used."
                 }

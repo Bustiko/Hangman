@@ -14,6 +14,8 @@
 		C95458E92A6FA95800F9976A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95458E72A6FA95800F9976A /* Main.storyboard */; };
 		C95458EB2A6FA95900F9976A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95458EA2A6FA95900F9976A /* Assets.xcassets */; };
 		C95458EE2A6FA95900F9976A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95458EC2A6FA95900F9976A /* LaunchScreen.storyboard */; };
+		C9F2A5FE2A71863200E776E0 /* WinPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2A5FD2A71863200E776E0 /* WinPageController.swift */; };
+		C9F2A6002A7186A500E776E0 /* LosePageContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2A5FF2A7186A500E776E0 /* LosePageContoller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C95458EA2A6FA95900F9976A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C95458ED2A6FA95900F9976A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C95458EF2A6FA95900F9976A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9F2A5FD2A71863200E776E0 /* WinPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinPageController.swift; sourceTree = "<group>"; };
+		C9F2A5FF2A7186A500E776E0 /* LosePageContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosePageContoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				C95458E52A6FA95800F9976A /* MainViewController.swift */,
+				C9F2A5FD2A71863200E776E0 /* WinPageController.swift */,
+				C9F2A5FF2A7186A500E776E0 /* LosePageContoller.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,7 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F2A6002A7186A500E776E0 /* LosePageContoller.swift in Sources */,
 				C95458E62A6FA95800F9976A /* MainViewController.swift in Sources */,
+				C9F2A5FE2A71863200E776E0 /* WinPageController.swift in Sources */,
 				C95458E22A6FA95800F9976A /* AppDelegate.swift in Sources */,
 				C95458E42A6FA95800F9976A /* SceneDelegate.swift in Sources */,
 				C94E76742A6FD11200D58AA2 /* WordManager.swift in Sources */,

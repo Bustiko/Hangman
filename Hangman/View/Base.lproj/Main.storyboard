@@ -482,11 +482,109 @@
                         <outlet property="heartsLeft" destination="b2R-ls-XoL" id="5kO-21-rfi"/>
                         <outlet property="hintsLeft" destination="A4t-DL-9hP" id="xU5-7N-qSz"/>
                         <outlet property="wordLabel" destination="KTm-sk-eLH" id="lDg-hC-cCx"/>
+                        <segue destination="K7j-PF-PvD" kind="presentation" identifier="mainToWin" id="Yla-33-x5Z"/>
+                        <segue destination="cgf-xR-tZe" kind="presentation" identifier="mainToLose" id="BZ0-ZN-5aR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="-111" y="-70"/>
+        </scene>
+        <!--Lost Page Controller-->
+        <scene sceneID="NR0-5W-LgD">
+            <objects>
+                <viewController id="cgf-xR-tZe" customClass="LostPageController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yh4-50-hV2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-ju-xAt">
+                                <rect key="frame" x="16" y="468" width="361" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="j5a-8F-t0t"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Press for a new word!">
+                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.70196078429999997" green="0.25490196079999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="hintButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CrQ-Vx-tGW"/>
+                                    <action selector="mainPageButtonPressed:" destination="cgf-xR-tZe" eventType="touchUpInside" id="EOY-5F-uKT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OOUPS!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7T-N3-ACM">
+                                <rect key="frame" x="122" y="296" width="148" height="51"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                <color key="textColor" red="0.70196078429999997" green="0.25490196079999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ovA-6R-1dx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i7T-N3-ACM" firstAttribute="leading" secondItem="ovA-6R-1dx" secondAttribute="leading" constant="122" id="IwY-DU-esj"/>
+                            <constraint firstItem="xMf-ju-xAt" firstAttribute="leading" secondItem="ovA-6R-1dx" secondAttribute="leading" constant="16" id="Ptk-21-32O"/>
+                            <constraint firstItem="i7T-N3-ACM" firstAttribute="top" secondItem="ovA-6R-1dx" secondAttribute="top" constant="296" id="QMM-cU-tKs"/>
+                            <constraint firstItem="ovA-6R-1dx" firstAttribute="trailing" secondItem="xMf-ju-xAt" secondAttribute="trailing" constant="16" id="bRC-sp-heP"/>
+                            <constraint firstItem="ovA-6R-1dx" firstAttribute="trailing" secondItem="i7T-N3-ACM" secondAttribute="trailing" constant="123" id="dI0-6G-CLD"/>
+                            <constraint firstItem="ovA-6R-1dx" firstAttribute="bottom" secondItem="xMf-ju-xAt" secondAttribute="bottom" constant="324" id="tId-t7-dcf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kBH-L1-5KK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z1k-yj-cgD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="345"/>
+        </scene>
+        <!--Win Page Controller-->
+        <scene sceneID="ld8-5n-HYl">
+            <objects>
+                <viewController id="K7j-PF-PvD" customClass="WinPageController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PS9-37-Wy8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUCCESS!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="L6m-HE-laZ">
+                                <rect key="frame" x="98" y="296" width="197" height="51"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                <color key="textColor" red="0.70196078429999997" green="0.25490196079999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHb-lf-sb2">
+                                <rect key="frame" x="16" y="468" width="361" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8Vz-cX-qXz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Press for a new word!">
+                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.70196078429999997" green="0.25490196079999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="hintButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eVF-By-fVX"/>
+                                    <action selector="mainPageButtonPressed:" destination="K7j-PF-PvD" eventType="touchUpInside" id="WFh-w2-1Kx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xjP-5w-rQc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xjP-5w-rQc" firstAttribute="trailing" secondItem="EHb-lf-sb2" secondAttribute="trailing" constant="16" id="FTe-Cm-saI"/>
+                            <constraint firstItem="L6m-HE-laZ" firstAttribute="leading" secondItem="xjP-5w-rQc" secondAttribute="leading" constant="98" id="FUY-8v-cbR"/>
+                            <constraint firstItem="L6m-HE-laZ" firstAttribute="top" secondItem="xjP-5w-rQc" secondAttribute="top" constant="296" id="L9m-yT-LrG"/>
+                            <constraint firstItem="xjP-5w-rQc" firstAttribute="trailing" secondItem="L6m-HE-laZ" secondAttribute="trailing" constant="98" id="Mfz-9e-1pn"/>
+                            <constraint firstItem="xjP-5w-rQc" firstAttribute="bottom" secondItem="EHb-lf-sb2" secondAttribute="bottom" constant="324" id="Trn-3l-8eP"/>
+                            <constraint firstItem="EHb-lf-sb2" firstAttribute="leading" secondItem="xjP-5w-rQc" secondAttribute="leading" constant="16" id="ods-cy-MVd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tpw-ma-gKE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMO-Fo-PlL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="-389"/>
         </scene>
     </scenes>
     <resources>
