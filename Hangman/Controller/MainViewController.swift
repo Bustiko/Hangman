@@ -15,11 +15,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var hintsLeft: UILabel!
     
     
-    var wordManager = WordManager()
-    var updatedWord = Array<Character>()
-    var countForNextQuestion = 0
-    var indices: [Int] = []
-    var letterIndexCount = 0
+    private var wordManager = WordManager()
+    private var updatedWord = Array<Character>()
+    private var countForNextQuestion = 0
+    private var indices: [Int] = []
+    private var letterIndexCount = 0
+    var array = Array<Int>()
     
     
     override func viewDidLoad() {
@@ -30,8 +31,18 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func hintButtonPressed(_ sender: UIButton) {
-        let randomIndex = (0...letterIndexCount).random(without: indices)
-        updatedWord[randomIndex] = words[0][randomIndex]
+        print(countForNextQuestion)
+        print(letterIndexCount)
+        print(array)
+        
+        for x in 0..<indices.count {
+            array = array.filter({$0 != indices[x]})
+            print(array)
+        }
+        let randomNumber = array.randomElement()
+//                countForNextQuestion += 1
+        updatedWord[randomNumber!] = words[0][randomNumber!]
+        indices.append(randomNumber!)
         wordLabel.text = String(updatedWord)
     }
     
@@ -44,20 +55,36 @@ class MainViewController: UIViewController {
         
         for x in 0..<words[0].count {
             if String(words[0][x]) == (sender.titleLabel?.text)! {
-                countForNextQuestion += 1
+//                countForNextQuestion += 1
                 updatedWord[x] = words[0][x]
                 indices.append(x)
             }
-               
+        }
+        
+        if !words[0].contains((sender.titleLabel?.text)!) {
+            let heartsAsInt = Int(heartsLeft.text!)!
+            DispatchQueue.main.async {
+                self.heartsLeft.text = String(heartsAsInt - 1)
+            }
+            if heartsLeft.text == "0" {
+                DispatchQueue.main.async {
+                    self.wordLabel.text = "All hearts used."
+                }
+            }
         }
         
         wordLabel.text = String(updatedWord)
         
-        if countForNextQuestion == words[0].count {
-            countForNextQuestion = 0
-            wordLabel.text = ""
-            wordManager.fetchData()
-        }
+//        if countForNextQuestion == words[0].count {
+//            countForNextQuestion = 0
+//            wordLabel.text = ""
+//            wordManager.fetchData()
+//        }
+    }
+    
+    
+    @IBAction func newWordButtonPressed(_ sender: UIButton) {
+        wordManager.fetchData()
     }
     
 }
@@ -65,10 +92,13 @@ class MainViewController: UIViewController {
 extension MainViewController: WordManagerDelegate {
     func didUpdateChanges(_ word: [String]) {
         letterIndexCount = word[0].count-1
+        array = Array(0...letterIndexCount)
+        indices = []
         print(word[0])
+        updatedWord = Array(repeating: "-", count: word[0].count)
         DispatchQueue.main.async {
             for _ in word[0] {
-                self.wordLabel.text?.append("-")
+                self.wordLabel.text? = String(self.updatedWord)
             }
         }
     }
