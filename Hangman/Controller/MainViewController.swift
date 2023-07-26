@@ -19,6 +19,8 @@ class MainViewController: UIViewController {
     var updatedWord = Array<Character>()
     var countForNextQuestion = 0
     var indices: [Int] = []
+    var letterIndexCount = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func hintButtonPressed(_ sender: UIButton) {
+        let randomIndex = (0...letterIndexCount).random(without: indices)
+        updatedWord[randomIndex] = words[0][randomIndex]
+        wordLabel.text = String(updatedWord)
     }
     
     
@@ -47,6 +52,7 @@ class MainViewController: UIViewController {
         }
         
         wordLabel.text = String(updatedWord)
+        
         if countForNextQuestion == words[0].count {
             countForNextQuestion = 0
             wordLabel.text = ""
@@ -58,6 +64,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: WordManagerDelegate {
     func didUpdateChanges(_ word: [String]) {
+        letterIndexCount = word[0].count-1
         print(word[0])
         DispatchQueue.main.async {
             for _ in word[0] {
@@ -90,6 +97,13 @@ extension StringProtocol {
 extension String {
     func numberOfOccurrencesOf(string: String) -> Int {
         return self.components(separatedBy:string).count - 1
+    }
+}
+extension ClosedRange where Element: Hashable {
+    func random(without excluded:[Element]) -> Element {
+        let valid = Set(self).subtracting(Set(excluded))
+        let random = Int(arc4random_uniform(UInt32(valid.count)))
+        return Array(valid)[random]
     }
 }
 
