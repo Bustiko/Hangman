@@ -35,7 +35,9 @@ class MainViewController: UIViewController {
 extension MainViewController: WordManagerDelegate {
     func didUpdateChanges(_ word: [String]) {
         DispatchQueue.main.async {
-            self.wordLabel.text = word[0]
+            for _ in word[0] {
+                self.wordLabel.text?.append("-")
+            }
         }
     }
     

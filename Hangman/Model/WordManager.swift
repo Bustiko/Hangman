@@ -7,6 +7,8 @@
 
 import Foundation
 
+var words = [""]
+
 protocol WordManagerDelegate {
     func didUpdateChanges(_ word: [String])
     func didFailWithError(_ error: Error)
@@ -30,10 +32,10 @@ struct WordManager {
                     return
                 } else {
                     if let safeData = data {
-                        if let word = parseJSON(safeData) {
-                            delegate?.didUpdateChanges(word)
+                        if let safeWords = parseJSON(safeData) {
+                            words = safeWords
+                            delegate?.didUpdateChanges(words)
                         }
-                        
                     }
                 }
                 
