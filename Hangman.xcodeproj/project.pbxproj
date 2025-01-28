@@ -6,30 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C96C2BF52D495F3100F40474 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C96C2BF42D495F3100F40474 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C96C2BCC2D495E7E00F40474 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96C2BE42D495E9300F40474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C96C2BE52D495E9300F40474 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C96C2BE62D495E9300F40474 /* WordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
+		C96C2BE82D495E9300F40474 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C96C2BEB2D495E9300F40474 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C96C2BEC2D495E9300F40474 /* WinPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinPageController.swift; sourceTree = "<group>"; };
+		C96C2BED2D495E9300F40474 /* LosePageContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosePageContoller.swift; sourceTree = "<group>"; };
+		C96C2BEF2D495E9300F40474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C96C2BF02D495E9300F40474 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C96C2BF22D495E9300F40474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C96C2BF42D495F3100F40474 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C96C2BDE2D495E8100F40474 /* Exceptions for "Hangman" folder in "Hangman" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = C96C2BCB2D495E7E00F40474 /* Hangman */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C96C2BCE2D495E7E00F40474 /* Hangman */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C96C2BDE2D495E8100F40474 /* Exceptions for "Hangman" folder in "Hangman" target */,
-			);
-			path = Hangman;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C96C2BC92D495E7E00F40474 /* Frameworks */ = {
@@ -45,7 +39,8 @@
 		C96C2BC32D495E7E00F40474 = {
 			isa = PBXGroup;
 			children = (
-				C96C2BCE2D495E7E00F40474 /* Hangman */,
+				C96C2BF42D495F3100F40474 /* .gitignore */,
+				C96C2BF32D495E9300F40474 /* Hangman */,
 				C96C2BCD2D495E7E00F40474 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +51,47 @@
 				C96C2BCC2D495E7E00F40474 /* Hangman.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C96C2BE72D495E9300F40474 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C96C2BE62D495E9300F40474 /* WordManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C96C2BEA2D495E9300F40474 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C96C2BE92D495E9300F40474 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C96C2BEE2D495E9300F40474 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C96C2BEB2D495E9300F40474 /* MainViewController.swift */,
+				C96C2BEC2D495E9300F40474 /* WinPageController.swift */,
+				C96C2BED2D495E9300F40474 /* LosePageContoller.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C96C2BF32D495E9300F40474 /* Hangman */ = {
+			isa = PBXGroup;
+			children = (
+				C96C2BE42D495E9300F40474 /* AppDelegate.swift */,
+				C96C2BE52D495E9300F40474 /* SceneDelegate.swift */,
+				C96C2BE72D495E9300F40474 /* Model */,
+				C96C2BEA2D495E9300F40474 /* View */,
+				C96C2BEE2D495E9300F40474 /* Controller */,
+				C96C2BEF2D495E9300F40474 /* Assets.xcassets */,
+				C96C2BF12D495E9300F40474 /* LaunchScreen.storyboard */,
+				C96C2BF22D495E9300F40474 /* Info.plist */,
+			);
+			path = Hangman;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +108,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C96C2BCE2D495E7E00F40474 /* Hangman */,
 			);
 			name = Hangman;
 			packageProductDependencies = (
@@ -122,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96C2BF52D495F3100F40474 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +170,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C96C2BE92D495E9300F40474 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96C2BE82D495E9300F40474 /* Main.storyboard */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C96C2BF12D495E9300F40474 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96C2BF02D495E9300F40474 /* LaunchScreen.storyboard */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C96C2BE02D495E8100F40474 /* Debug */ = {

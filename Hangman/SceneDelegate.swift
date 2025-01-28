@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Hangman
 //
-//  Created by Buse Karabıyık on 28.01.2025.
+//  Created by Buse Karabıyık on 25.07.2023.
 //
 
 import UIKit
